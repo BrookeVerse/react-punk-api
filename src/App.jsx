@@ -1,11 +1,12 @@
-import './App.scss';
-import MainArea from './components/MainArea/MainArea';
+import "./App.scss";
+import MainArea from "./components/MainArea/MainArea";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <h1>Punk Api</h1>
-      <MainArea />
+        <NavBar />
+        <MainArea />
     </div>
   );
 }
