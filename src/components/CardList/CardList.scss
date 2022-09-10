@@ -1,0 +1,11 @@
+@use "../../assets/scss/variables" as *;
+
+.cardListContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 70vw;
+    height: fit-content;
+    border: 3px solid black;
+}
