@@ -1,13 +1,13 @@
-import React from 'react'
-import CardList from '../CardList/CardList'
-import "./MainArea.scss"
+import React from "react";
+import CardList from "../CardList/CardList";
+import "./MainArea.scss";
 
-const MainArea = () => {
+const MainArea = ({ beerArr }) => {
   return (
-    <div className='mainArea'>
-      <CardList />
+    <div className="mainArea">
+      <CardList beerArr={beerArr}/>
     </div>
-  )
-}
+  );
+};
 
-export default MainArea
+export default MainArea;

@@ -10,11 +10,16 @@
   overflow: hidden;
   overflow-y: auto;
 
+  &__heading {
+    margin: auto;
+    font-size: medium;
+  }
+  &__content {
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
   &__img {
     margin: auto;
   }
-}
-h2 {
-  margin: auto;
-  font-size: medium;
 }

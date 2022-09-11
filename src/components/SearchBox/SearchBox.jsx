@@ -1,9 +1,11 @@
 import React from 'react'
 import "./SearchBox.scss"
-const SearchBox = ({label, searchTerm, handleInput}) => {
+const SearchBox = ({ searchWord, handleInput}) => {
   return (
     <div>
-      <input type="text" placeholder='Search...' name={label} value={searchTerm} onInput={handleInput} />
+      <form>
+        <input type="text" placeholder='Search...' value={searchWord} onInput={handleInput} />
+      </form>
     </div>
   )
 }
