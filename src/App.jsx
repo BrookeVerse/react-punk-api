@@ -10,15 +10,26 @@ import "./App.scss";
 function App() {
   const [searchWord, setSearchWord] = useState("");
   const [filterArr, setFilterArr] = useState([]);
-  const [apiUrl, setApiUrl] = useState("https://api.punkapi.com/v2/beers");
+  const [apiUrl, setApiUrl] = useState("https://api.punkapi.com/v2/beers?page=1&per_page=80");
   const [beers, setBeers] = useState([]);
 
-  const handleClick = () => {
-    console.log("Hello");
-    setApiUrl("https://api.punkapi.com/v2/beers?abv_gt=6");
+  const handleClick = (button) => {
+    const click = button.target.id;
+    switch (click) {
+      case "ABV":
+        setApiUrl("https://api.punkapi.com/v2/beers?abv_gt=6&page=1&per_page=80");
+        break;
+      case "Classic":
+        setApiUrl("https://api.punkapi.com/v2/beers?brewed_before=01-2010&page=1&per_page=80");
+        break;
+      case "Acidic":
+        setApiUrl("https://api.punkapi.com/v2/beers?ibu_lt=30&page=1&per_page=80");
+        break;
+      default:
+        return false;
+    }
   };
-  console.log(apiUrl);
-  
+
   useEffect(() => {
     const getBeers = async () => {
       const res = await fetch(apiUrl);
@@ -46,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <NavBar searchWord={searchWord} handleInput={handleInput} handleClick={handleClick} />
-      <MainArea beerArr={searchWord.length < 1 ? beers : filterArr} />
+      {beers && <MainArea beerArr={searchWord.length < 1 ? beers : filterArr} />}
     </div>
   );
 }
