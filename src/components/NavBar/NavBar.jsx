@@ -1,12 +1,12 @@
 import FiltersList from '../FiltersList/FiltersList'
 import SearchBox from '../SearchBox/SearchBox'
 import "./NavBar.scss"
-const NavBar = ({ searchWord, handleInput}) => {
+const NavBar = ({ searchWord, handleInput, handleClick}) => {
   
   return (
     <div className='navBar'>
         <SearchBox searchWord={searchWord} handleInput={handleInput}/>
-        <FiltersList />
+        <FiltersList handleClick={handleClick}/>
     </div>
   )
 }

@@ -2,10 +2,10 @@ import React from 'react'
 import FiltersItem from '../FiltersItem/FiltersItem'
 import "./FiltersList.scss"
 
-const FiltersList = () => {
+const FiltersList = ({handleClick}) => {
   return (
     <div>
-        <FiltersItem />
+        <FiltersItem handleClick={handleClick}/>
     </div>
   )
 }
