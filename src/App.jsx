@@ -3,42 +3,62 @@ import { useState, useEffect } from "react";
 import MainArea from "./components/MainArea/MainArea";
 import NavBar from "./components/NavBar/NavBar";
 
-import beerList from "./assets/data/beer.js";
-
 import "./App.scss";
 
 function App() {
   const [searchWord, setSearchWord] = useState("");
   const [filterArr, setFilterArr] = useState([]);
-  const [apiUrl, setApiUrl] = useState("https://api.punkapi.com/v2/beers?page=1&per_page=80");
   const [beers, setBeers] = useState([]);
+
+  useEffect(() => {
+    const getBeers = async () => {
+      const res = await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80");
+      const data = await res.json();
+      setBeers(data);
+    };
+
+    getBeers();
+  }, [] );
 
   const handleClick = (button) => {
     const click = button.target.id;
     switch (click) {
       case "ABV":
-        setApiUrl("https://api.punkapi.com/v2/beers?abv_gt=6&page=1&per_page=80");
+        getApiAbv();
         break;
       case "Classic":
-        setApiUrl("https://api.punkapi.com/v2/beers?brewed_before=01-2010&page=1&per_page=80");
+        getApiClassic();
         break;
       case "Acidic":
-        setApiUrl("https://api.punkapi.com/v2/beers?ibu_lt=30&page=1&per_page=80");
+        getApiPh();
         break;
       default:
         return false;
     }
   };
 
-  useEffect(() => {
-    const getBeers = async () => {
-      const res = await fetch(apiUrl);
-      const data = await res.json();
-      setBeers(data);
-    };
+  const getApiPh = () => {
+    const phFilter = beers.filter((beer) => {
+      return beer.ph < 4;
+    });
+    console.log(phFilter);
+    setBeers(phFilter);
+  };
 
-    getBeers();
-  }, [apiUrl]);
+  const getApiAbv = () => {
+    const abvFilter = beers.filter((beer) => {
+      return beer.abv > 6;
+    });
+    setBeers(abvFilter);
+  };
+  
+  const getApiClassic = () => {
+    const classicFilter = beers.filter((beer) => {
+      const letsSee = beer.first_brewed.slice(3)
+      return parseInt(letsSee) < 2010;
+    })
+    setBeers(classicFilter);
+  }
 
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
@@ -50,7 +70,7 @@ function App() {
       });
       setFilterArr(newBeerList);
     } else {
-      setFilterArr(beerList);
+      setFilterArr(beers);
     }
   };
 
