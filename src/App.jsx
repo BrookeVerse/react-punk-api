@@ -1,64 +1,39 @@
 import { useState, useEffect } from "react";
 
-import MainArea from "./components/MainArea/MainArea";
-import NavBar from "./components/NavBar/NavBar";
+import Nav from "./containers/Nav/Nav";
+import Main from "./containers/Main/Main";
 
 import "./App.scss";
+
 
 function App() {
   const [searchWord, setSearchWord] = useState("");
   const [filterArr, setFilterArr] = useState([]);
   const [beers, setBeers] = useState([]);
 
+  const getBeers = async () => {
+    const res = await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80");
+    const data = await res.json();
+    setBeers(data);
+  };
+
   useEffect(() => {
-    const getBeers = async () => {
-      const res = await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80");
-      const data = await res.json();
-      setBeers(data);
-    };
-
     getBeers();
-  }, [] );
+  }, []);
 
-  const handleClick = (button) => {
-    const click = button.target.id;
-    switch (click) {
-      case "ABV":
-        getApiAbv();
-        break;
-      case "Classic":
-        getApiClassic();
-        break;
-      case "Acidic":
-        getApiPh();
-        break;
-      default:
-        return false;
+  const handleCheckbox = (button) => {
+    if (button.target.checked) {
+      if (button.target.value === "ABV") {
+        setBeers(beers.filter((beer) => beer.abv > 6));
+      } else if (button.target.value === "Classic") {
+          setBeers(beers.filter((beer) => Number(beer.first_brewed.slice(3)) < 2010))
+    } else if (button.target.value === "Acidic") {
+      setBeers(beers.filter((beer) => beer.ph < 4))
     }
-  };
-
-  const getApiPh = () => {
-    const phFilter = beers.filter((beer) => {
-      return beer.ph < 4;
-    });
-    console.log(phFilter);
-    setBeers(phFilter);
-  };
-
-  const getApiAbv = () => {
-    const abvFilter = beers.filter((beer) => {
-      return beer.abv > 6;
-    });
-    setBeers(abvFilter);
-  };
+  }else {
+    getBeers();
+  }};
   
-  const getApiClassic = () => {
-    const classicFilter = beers.filter((beer) => {
-      const letsSee = beer.first_brewed.slice(3)
-      return parseInt(letsSee) < 2010;
-    })
-    setBeers(classicFilter);
-  }
 
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
@@ -76,8 +51,8 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar searchWord={searchWord} handleInput={handleInput} handleClick={handleClick} />
-      {beers && <MainArea beerArr={searchWord.length < 1 ? beers : filterArr} />}
+      <Nav searchWord={searchWord} handleInput={handleInput} handleCheckbox={handleCheckbox}/>
+      {beers && <Main beerArr={searchWord.length < 1 ? beers : filterArr}/>}
     </div>
   );
 }
