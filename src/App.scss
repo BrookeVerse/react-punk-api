@@ -3,6 +3,7 @@
 .app {
   display: flex;
   flex-direction: column;
+  height: 100vh;
   align-items: center;
   background-image: url("./assets/images/punchbackground\ 2.gif");
   background-position: center;
@@ -10,7 +11,8 @@
   background-attachment: fixed;
 
   &__heading {
-    color: #1B93C5;
+    margin: 10px;
+    color: $primaryColour;
     text-shadow: 8px 3px 2px white ;
     font-family: $primaryFont;
     font-size: 100px;
@@ -30,7 +32,9 @@
     height: fit-content;
     text-align: center;
     display: flex;
-    background-color: antiquewhite;
+    background-color: $secondaryColour;
+    border: 3px solid black;
+    border-radius: 5px;
   }
 }
 

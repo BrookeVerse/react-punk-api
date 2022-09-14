@@ -3,3 +3,9 @@
 .mainArea {
     width: 71vw;
 }
+
+@media screen and (min-width: 768px) {
+    .mainArea{
+        width: 60vw;
+    }
+}

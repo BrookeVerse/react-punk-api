@@ -4,18 +4,18 @@ import "./FiltersItem.scss";
 const FiltersItem = ({ handleCheckbox }) => {
   return (
     <div className="filtersItem">
-      <h2>
-        High ABV (6.0%)
+      <label htmlFor="ABV">
+        High ABV (6.0%)<br />
         <input type="checkbox" onInput={handleCheckbox} id="ABV" value="ABV" />
-      </h2>
-      <h2>
-        Classic Range
+      </label>
+      <label htmlFor="Classic">
+        Classic Range <br />
         <input type="checkbox" onInput={handleCheckbox} id="Classic" value="Classic" />
-      </h2>
-      <h2>
-        Acidic(under 4)
+      </label>
+      <label htmlFor="Acidic">
+        Acidic (4)<br />
         <input type="checkbox" onInput={handleCheckbox} id="Acidic" value="Acidic"/>
-      </h2>
+      </label>
     </div>
   );
 };

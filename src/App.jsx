@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 import Nav from "./containers/Nav/Nav";
 import Main from "./containers/Main/Main";
-import punkImg from "./assets/images/punkbackground.gif";
 
 import "./App.scss";
 

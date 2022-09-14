@@ -5,7 +5,12 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 70vw;
-  height: 100vh;
-  border: 3px solid black;
+  height: 70vh;
   overflow-x: auto;
+}
+
+@media screen and (min-width: 820px) {
+  .cardListContainer {
+    width: 60vw;
+  }
 }
