@@ -1,4 +1,36 @@
-.App {
-  text-align: center;
+@use "./assets/scss/variables" as *;
+
+.app {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("./assets/images/punchbackground\ 2.gif");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  &__heading {
+    color: #1B93C5;
+    text-shadow: 8px 3px 2px white ;
+    font-family: $primaryFont;
+    font-size: 100px;
+  }
+
+  &__header {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-image: url("./assets/images/punchbackground\ 2.gif");
+    background-attachment: fixed;
+    
+  }
+  &__content {
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    background-color: antiquewhite;
+  }
 }
+

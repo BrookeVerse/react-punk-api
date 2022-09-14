@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 import Nav from "./containers/Nav/Nav";
 import Main from "./containers/Main/Main";
+import punkImg from "./assets/images/punkbackground.gif";
 
 import "./App.scss";
-
 
 function App() {
   const [searchWord, setSearchWord] = useState("");
@@ -26,14 +26,14 @@ function App() {
       if (button.target.value === "ABV") {
         setBeers(beers.filter((beer) => beer.abv > 6));
       } else if (button.target.value === "Classic") {
-          setBeers(beers.filter((beer) => Number(beer.first_brewed.slice(3)) < 2010))
-    } else if (button.target.value === "Acidic") {
-      setBeers(beers.filter((beer) => beer.ph < 4))
+        setBeers(beers.filter((beer) => Number(beer.first_brewed.slice(3)) < 2010));
+      } else if (button.target.value === "Acidic") {
+        setBeers(beers.filter((beer) => beer.ph < 4));
+      }
+    } else {
+      getBeers();
     }
-  }else {
-    getBeers();
-  }};
-  
+  };
 
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
@@ -50,9 +50,14 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Nav searchWord={searchWord} handleInput={handleInput} handleCheckbox={handleCheckbox}/>
-      {beers && <Main beerArr={searchWord.length < 1 ? beers : filterArr}/>}
+    <div className="app">
+      <header className="app__header">
+        <h1 className="app__heading">Punk Ipa</h1>
+      </header>
+      <div className="app__content">
+        <Nav searchWord={searchWord} handleInput={handleInput} handleCheckbox={handleCheckbox} />
+        {beers && <Main beerArr={searchWord.length < 1 ? beers : filterArr} />}
+      </div>
     </div>
   );
 }

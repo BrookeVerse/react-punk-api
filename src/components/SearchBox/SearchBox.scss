@@ -1,0 +1,12 @@
+@use "../../assets/scss/variables" as *;
+
+.searchBox {
+
+    &__input {
+        width: 20vw;
+        border: 2px solid #1B93C5;
+        border-radius: 5px;
+        font-size: 20px;
+        font-family: $primaryFont;
+    }
+}
