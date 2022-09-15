@@ -1,84 +1,40 @@
 @use "../../assets/scss/variables" as *;
 
 .beer-info {
-  &__banner {
+  margin: auto 30px;
+  &__container {
+    display: flex;
+    padding: 20px;
     overflow: hidden;
-    height: 20vh;
-    position: relative;
-  }
-
-  &__img {
+    overflow-y: auto;
+    width: 30vw;
+    height: 20vw;
+    border: 2px solid black;
     border-radius: 15px;
-    width: 10vw;
-    display: block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
-    &--first {
-      top: 30px;
-    }
-
-    &--last {
-      bottom: 80px;
-    }
+    background-color: #fbfbf8;
   }
-
-  &__content {
-    padding: 10px 50px;
+  &__tagline {
+    margin-bottom: 10px;
   }
 
   &__facts {
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
+  }
+
+  &__img {
+    margin: auto;
+    max-width: 10vh;
+    height: 20vh;
   }
 
   &__heading {
-    font-size: 30px;
-    width: fit-content;
-    &:after {
-      content: "";
-      display: block;
-      height: 5px;
-      width: 100%;
-      border-radius: 15px;
-    }
+    flex-direction: column;
+    margin: auto;
+    font-size: 50px;
+    font-family: $primaryFont;
   }
-}
 
-@media screen and (min-width: 992px) {
-  .album-info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-radius: 15px;
-    overflow: hidden;
-    margin: 50px 50px;
-    min-height: 60vh;
-
-    &__banner {
-      height: 100%;
-      background-color: unset;
-    }
-
-    &__img {
-      width: unset;
-      height: 100%;
-      left: unset;
-      transform: unset;
-      top: 0;
-      opacity: 0.8;
-
-      &--first {
-        left: 0;
-      }
-
-      &--last {
-        right: 0;
-      }
-    }
-
-    &__heading {
-      margin: 0 auto;
-    }
+  &__content {
+    margin: auto;
   }
 }
