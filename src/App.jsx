@@ -28,7 +28,7 @@ function App() {
         setBeers(beers.filter((beer) => Number(beer.first_brewed.slice(3)) < 2010));
       } else if (button.target.value === "Acidic") {
         setBeers(beers.filter((beer) => beer.ph < 4));
-      }
+      } 
     } else {
       getBeers();
     }
@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="app">
       <header className="app__header">
-        <h1 className="app__heading">Punk Ipa</h1>
+        <h1 className="app__heading">Punk Api</h1>
       </header>
       <div className="app__content">
         <Nav searchWord={searchWord} handleInput={handleInput} handleCheckbox={handleCheckbox} />

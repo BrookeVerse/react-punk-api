@@ -19,3 +19,12 @@
         }
     }
 }
+
+@media screen and (min-width: 1201px) {
+    .searchBox {
+
+        &__input {
+            width: 10vw;
+        }
+    }
+  }

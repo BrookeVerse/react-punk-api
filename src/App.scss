@@ -38,3 +38,11 @@
   }
 }
 
+@media screen and (min-width: 1201px) {
+  .app {
+
+    &__header {
+      height: 300px;
+    }
+  }
+}
