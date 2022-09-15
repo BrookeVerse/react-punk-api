@@ -1,6 +1,7 @@
 import React from "react";
-import "./Main.scss";
 import MainArea from "../../components/MainArea/MainArea";
+
+import "./Main.scss";
 
 const Main = ({beerArr}) => {
   return <div>

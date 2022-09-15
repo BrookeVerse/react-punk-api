@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Nav from "./containers/Nav/Nav";
 import Main from "./containers/Main/Main";
+import BeerInfo from "./components/BeerInfo/BeerInfo";
 
 import "./App.scss";
 
@@ -28,7 +30,7 @@ function App() {
         setBeers(beers.filter((beer) => Number(beer.first_brewed.slice(3)) < 2010));
       } else if (button.target.value === "Acidic") {
         setBeers(beers.filter((beer) => beer.ph < 4));
-      } 
+      }
     } else {
       getBeers();
     }
@@ -49,15 +51,20 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <header className="app__header">
-        <h1 className="app__heading">Punk Api</h1>
-      </header>
-      <div className="app__content">
-        <Nav searchWord={searchWord} handleInput={handleInput} handleCheckbox={handleCheckbox} />
-        {beers && <Main beerArr={searchWord.length < 1 ? beers : filterArr} />}
+    <Router>
+      <div className="app">
+        <header className="app__header">
+          <h1 className="app__heading">Punk Api</h1>
+        </header>
+          <div className="app__content">
+            <Nav searchWord={searchWord} handleInput={handleInput} handleCheckbox={handleCheckbox} />
+        <Routes>
+            <Route path="/beers/:beerId" element={<BeerInfo beerArr={searchWord.length < 1 ? beers : filterArr}/>}></Route>
+            <Route path="/" element={<Main beerArr={searchWord.length < 1 ? beers : filterArr} />}> </Route>
+        </Routes>
+          </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
