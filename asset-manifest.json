@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/brookeverse/react-punk-api/static/css/main.4c2d7b13.css",
-    "main.js": "/brookeverse/react-punk-api/static/js/main.0d331f76.js",
-    "static/media/punchbackground 2.gif": "/brookeverse/react-punk-api/static/media/punchbackground 2.7dacad609db9ac575564.gif",
-    "index.html": "/brookeverse/react-punk-api/index.html",
-    "main.4c2d7b13.css.map": "/brookeverse/react-punk-api/static/css/main.4c2d7b13.css.map",
-    "main.0d331f76.js.map": "/brookeverse/react-punk-api/static/js/main.0d331f76.js.map"
+    "main.css": "/brookeverse/react-punk-api.git/static/css/main.b6db64b1.css",
+    "main.js": "/brookeverse/react-punk-api.git/static/js/main.0d331f76.js",
+    "static/media/punchbackground 2.gif": "/brookeverse/react-punk-api.git/static/media/punchbackground 2.7dacad609db9ac575564.gif",
+    "index.html": "/brookeverse/react-punk-api.git/index.html",
+    "main.b6db64b1.css.map": "/brookeverse/react-punk-api.git/static/css/main.b6db64b1.css.map",
+    "main.0d331f76.js.map": "/brookeverse/react-punk-api.git/static/js/main.0d331f76.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c2d7b13.css",
+    "static/css/main.b6db64b1.css",
     "static/js/main.0d331f76.js"
   ]
 }
