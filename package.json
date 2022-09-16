@@ -1,6 +1,6 @@
 {
   "name": "punk-api",
-  "homepage": "https://github.com/brookeverse/react-punk-api",
+  "homepage": "https://github.com/brookeverse/react-punk-api.git",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

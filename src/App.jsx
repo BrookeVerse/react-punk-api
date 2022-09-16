@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {  Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Main from "./containers/Main/Main";
 import BeerInfo from "./components/BeerInfo/BeerInfo";
