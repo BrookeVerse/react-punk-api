@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-punk-api/static/css/main.1888572d.css",
-    "main.js": "/react-punk-api/static/js/main.375543f9.js",
+    "main.js": "/react-punk-api/static/js/main.8475b280.js",
     "static/media/punchbackground 2.gif": "/react-punk-api/static/media/punchbackground 2.7dacad609db9ac575564.gif",
     "index.html": "/react-punk-api/index.html",
     "main.1888572d.css.map": "/react-punk-api/static/css/main.1888572d.css.map",
-    "main.375543f9.js.map": "/react-punk-api/static/js/main.375543f9.js.map"
+    "main.8475b280.js.map": "/react-punk-api/static/js/main.8475b280.js.map"
   },
   "entrypoints": [
     "static/css/main.1888572d.css",
-    "static/js/main.375543f9.js"
+    "static/js/main.8475b280.js"
   ]
 }
