@@ -3,12 +3,15 @@
 .beer-info {
   margin: auto 30px;
   position: relative;
+  width: 70vw;
+  height: 90vw;
   &__container {
     display: flex;
+    margin: 60px auto;
     padding: 20px;
     overflow: hidden;
     overflow-y: auto;
-    width: 40vw;
+    width: 50vw;
     height: 60vw;
     border: 2px solid $quaternaryColour;
     border-radius: 15px;
@@ -54,6 +57,8 @@
 
 @media screen and (min-width: 1024px) {
   .beer-info {
+    width: 40vw;
+    height: 30vw;
     &__container {
       width: 30vw;
       height: 20vw;

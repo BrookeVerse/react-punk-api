@@ -23,7 +23,7 @@
 - [Getting Started](#getting_started)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
+- [To-Do](#to-do)
 - [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
@@ -65,6 +65,14 @@ it("should it renders a card", async() => {
 
 This is using React, and can be used to present information cards from an api database.
 With small changes you could present any time of cards, making sure to read the API documentation to make the correct changes.
+
+## ✔️ To-Do <a name="to-do"></a>
+
+Functionality I will add to this project: 
+
+- To be able to use the filters on a search input 
+- To add pagination so that multiple pages of beers are presented
+- More pages such as food recipes to work with beers
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 

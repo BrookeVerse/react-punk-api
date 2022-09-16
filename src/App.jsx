@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Nav from "./containers/Nav/Nav";
 import Main from "./containers/Main/Main";
 import BeerInfo from "./components/BeerInfo/BeerInfo";
 
@@ -10,7 +9,7 @@ import "./App.scss";
 function App() {
   //All States being set
   const [searchWord, setSearchWord] = useState("");
-  const [filterArr, setFilterArr] = useState([]);
+  const [filterBeers, setFilterBeers] = useState([]);
   const [beers, setBeers] = useState([]);
 
   //API being called for a database
@@ -51,9 +50,9 @@ function App() {
       const newBeerList = beers.filter((beer) => {
         return beer.name.toLowerCase().includes(searchWord);
       });
-      setFilterArr(newBeerList);
+      setFilterBeers(newBeerList);
     } else {
-      setFilterArr(beers);
+      setFilterBeers(beers);
     }
   };
 
@@ -66,10 +65,10 @@ function App() {
           <h1 className="app__heading">Fancy A Brew?</h1>
         </header>
           <div className="app__content">
-            <Nav searchWord={searchWord} handleInput={handleInput} handleCheckbox={handleCheckbox} />
+            
         <Routes>
-            <Route path="/beers/:beerId" element={<BeerInfo beerArr={searchWord.length < 1 ? beers : filterArr}/>}></Route>
-            <Route path="/" element={<Main beerArr={searchWord.length < 1 ? beers : filterArr} />}> </Route>
+            <Route path="/beers/:beerId" element={<BeerInfo beerArr={searchWord.length < 1 ? beers : filterBeers}/>}></Route>
+            <Route path="/" element={<Main beerArr={searchWord.length < 1 ? beers : filterBeers} searchWord={searchWord} handleInput={handleInput} handleCheckbox={handleCheckbox}/>}> </Route>
         </Routes>
           </div>
       </div>

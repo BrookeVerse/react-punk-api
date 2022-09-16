@@ -15,7 +15,7 @@
     color: $primaryColour;
     text-shadow: 8px 3px 2px $tertiaryColour ;
     font-family: $primaryFont;
-    font-size: 100px;
+    font-size: 70px;
   }
 
   &__header {
@@ -32,7 +32,7 @@
     height: fit-content;
     text-align: center;
     display: flex;
-    background-color: $secondaryColour;
+    background: $secondaryColour;
     border: 3px solid $quaternaryColour;
     box-shadow: 10px 3px 7px $quaternaryColour;
     border-radius: 5px;
@@ -41,7 +41,9 @@
 
 @media screen and (min-width: 1201px) {
   .app {
-      
+    &__heading {
+      font-size: 100px;
+    }
     &__header {
       height: 300px;
     }
