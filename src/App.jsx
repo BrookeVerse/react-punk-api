@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, HashRouter } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 
 import Main from "./containers/Main/Main";
 import BeerInfo from "./components/BeerInfo/BeerInfo";
@@ -59,33 +59,29 @@ function App() {
   //This area is rendering in the componenets and using routing to present different pages.
   //Also sending down props for the componenets to use including ternary operator.
   return (
-    <React.StrictMode>
-      <HashRouter>
-        <div className="app">
-          <header className="app__header">
-            <h1 className="app__heading">Fancy A Brew?</h1>
-          </header>
-          <div className="app__content">
-            <Routes>
-              <Route path="/beers/:beerId" element={<BeerInfo beerArr={searchWord.length < 1 ? beers : filterBeers} />}></Route>
-              <Route
-                path="/"
-                element={
-                  <Main
-                    beerArr={searchWord.length < 1 ? beers : filterBeers}
-                    searchWord={searchWord}
-                    handleInput={handleInput}
-                    handleCheckbox={handleCheckbox}
-                  />
-                }
-              >
-                {" "}
-              </Route>
-            </Routes>
-          </div>
+      <div className="app">
+        <header className="app__header">
+          <h1 className="app__heading">Fancy A Brew?</h1>
+        </header>
+        <div className="app__content">
+          <Routes>
+            <Route path="/beers/:beerId" element={<BeerInfo beerArr={searchWord.length < 1 ? beers : filterBeers} />}></Route>
+            <Route
+              path="/"
+              element={
+                <Main
+                  beerArr={searchWord.length < 1 ? beers : filterBeers}
+                  searchWord={searchWord}
+                  handleInput={handleInput}
+                  handleCheckbox={handleCheckbox}
+                />
+              }
+            >
+              {" "}
+            </Route>
+          </Routes>
         </div>
-      </HashRouter>
-    </React.StrictMode>
+      </div>
   );
 }
 
