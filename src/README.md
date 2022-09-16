@@ -1,22 +1,19 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+ <img width=300px height=300px style="border-radius:15%" src="./assets/ReadMeImg/punkApi.JPG" alt="Project logo"></a>
 </p>
 
-<h3 align="center">punk-api</h3>
+<h3 align="center">Fancy A Brew?</h3>
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> This project runs the Punk Api to present beer cards with descriptions of each beer. You can also filter through the ABV, Ph level and a Classic Range. When you click the image of the beer, it will take you to another page with more information in that perticular beer. 
     <br> 
 </p>
 
@@ -24,7 +21,6 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
 - [TODO](../TODO.md)
@@ -34,81 +30,57 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+This project was creating to advance my react skills and ability to produce a professional looking webpage, using an API. The focus on this project was using an API and functionality. Using JavaScript to write each function that will sort through the value of keys in the API.
+
+For a user they are able to search through the beers cards for a perticular beer in the list. They can also use the filter feature to make the list only show what fits the criteria of each of these filters. All the filters can be used at the same time to customise the list of beers presented.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+To start this project I wanted to make sure that all of the functionality works. Having the basic styling so that I could see what is happening as I updated each line of code.
+Creating the cards was first using a simple data base, before implementing the API information. Using JavaScript to create the functions, i worked on creating a search function so that users can search through the list of beers.
 
-### Prerequisites
+Props have allowed for these functions to be sent down to components so that they are presentational and testable for the users. The filter functions run through If statements to tell the data what should functions should be run through to present the right information.
 
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
+<p align="left">
+  <a href="" rel="noopener">
+ <img width=500px height=200px style="border-radius:10%" src="./assets/ReadMeImg/punkApi3.JPG" alt="Project logo"></a>
+</p>
 ## 🔧 Running the tests <a name = "tests"></a>
 
-Explain how to run the automated tests for this system.
+Tests are being run on the Card component and the FilterItems component. These tests are checking that these components are being rendered, everything else that should be showing up.
 
-### Break down into end to end tests
-
-Explain what these tests test and why
+The test below is testing the the component itself is rending on the document.
 
 ```
-Give an example
-```
+it("should it renders a card", async() => {
+    render(<Card />);
 
-### And coding style tests
+    const cards = screen.queryAllByRole("card");
 
-Explain what these tests test and why
-
-```
-Give an example
+    cards.forEach(card => {expect(card).toBeInTheDocument();})
+});
 ```
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
+This is using React, and can be used to present information cards from an api database.
+With small changes you could present any time of cards, making sure to read the API documentation to make the correct changes.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [JavaScript](https://www.javascript.com/) - Code Language
+- [React](https://reactjs.org/) - Web Framework
+- [Punk Api](https://punkapi.com/documentation/v2) - API database
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+- [@BrookeVerse](https://github.com/BrookeVerse) - Developed By
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+The \_nology coaches who trained us in using react, so that we could use that knowledge to create an app from scratch.
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=500px height=400px style="border-radius:10%" src="./assets/ReadMeImg/punkApi2.JPG" alt="Project logo"></a>
+</p>

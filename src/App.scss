@@ -13,7 +13,7 @@
   &__heading {
     margin: 10px;
     color: $primaryColour;
-    text-shadow: 8px 3px 2px white ;
+    text-shadow: 8px 3px 2px $tertiaryColour ;
     font-family: $primaryFont;
     font-size: 100px;
   }
@@ -33,14 +33,15 @@
     text-align: center;
     display: flex;
     background-color: $secondaryColour;
-    border: 3px solid black;
+    border: 3px solid $quaternaryColour;
+    box-shadow: 10px 3px 7px $quaternaryColour;
     border-radius: 5px;
   }
 }
 
 @media screen and (min-width: 1201px) {
   .app {
-
+      
     &__header {
       height: 300px;
     }

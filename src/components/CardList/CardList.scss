@@ -9,6 +9,12 @@
   overflow-x: auto;
 }
 
+.beerCards__unAvailable{
+  margin: 300px;
+  font-size: 50px;
+  font-family: $primaryFont;
+}
+
 @media screen and (min-width: 820px) {
   .cardListContainer {
     width: 60vw;

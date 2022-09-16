@@ -7,12 +7,13 @@ const Card = ({ name, info, src, id }) => {
   return (
     <div className="beerCard" name="card">
       <Link to={`/beers/${id}`}>
-        <img width="35px" height="90px" src={src} alt="Beer Img" className="beerCard__img" name="cardImage" />
+        <img src={src} alt="Beer Img" className="beerCard__img" name="cardImage" />
       </Link>
-      <h2 className="beerCard__heading" name="title">
-        {name}
-      </h2>
       <div>
+        <h2 className="beerCard__heading" name="title">
+          {name}
+          <hr></hr>
+        </h2>
         <p className="beerCard__content" name="descriptions">
           {info}
         </p>

@@ -5,7 +5,7 @@ const FiltersItem = ({ handleCheckbox }) => {
   return (
     <div className="filtersItem" id="filtersItem">
       <label htmlFor="ABV">
-        High ABV (6.0%)
+        High ABV Over(6.0%)
         <br />
         <input type="checkbox" onInput={handleCheckbox} data-testid="abv" value="ABV" />
       </label>
@@ -14,7 +14,7 @@ const FiltersItem = ({ handleCheckbox }) => {
         <input type="checkbox" onInput={handleCheckbox} data-testid="Classic" value="Classic" />
       </label>
       <label htmlFor="Acidic">
-        Acidic (4)
+        Acidic Under(4)
         <br />
         <input type="checkbox" onInput={handleCheckbox} data-testid="Acidic" value="Acidic" />
       </label>

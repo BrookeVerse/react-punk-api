@@ -1,11 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&family=Source+Serif+Pro&display=swap");
 
 $primaryFont: League Gothic, comic, sans-serif;
+$secondaryFont: Source Serif pro, comic, sans-serif;
 
-$primaryColour: #1B93C5;
+$primaryColour: #1b93c5;
 $secondaryColour: #737373;
+$tertiaryColour: #ffff;
+$quaternaryColour: #373737;
+$quinaryColour: #c6c6c6;
+$senaryColour: #fbfbf8;
+$septenaryColour: #565656;
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }

@@ -1,7 +1,7 @@
 import {render, screen} from "@testing-library/react";
 import Card from "./Card";
 
-it("should render a card", async() => {
+it("should it renders a card", async() => {
     //Arrange
     render(<Card />);
     //Act
@@ -10,7 +10,7 @@ it("should render a card", async() => {
     cards.forEach(card => {expect(card).toBeInTheDocument();})
 });
 
-it("show render an image", async() => {
+it("show it renders an image", async() => {
     //Arrange
     render(<Card />);
     //Act
@@ -20,7 +20,7 @@ it("show render an image", async() => {
 
 });
 
-it("show render an title", async() => {
+it("show it renders an title", async() => {
     //Assert
     render(<Card />);
     //Act
@@ -29,7 +29,7 @@ it("show render an title", async() => {
     titles.forEach(title => {expect(title).toBeInTheDocument();})
 });
 
-it("show render a description", async() => {
+it("show it renders a description", async() => {
     //Assert
     render(<Card />);
     //Act

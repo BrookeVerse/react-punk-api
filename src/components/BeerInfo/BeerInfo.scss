@@ -2,27 +2,39 @@
 
 .beer-info {
   margin: auto 30px;
+  position: relative;
   &__container {
     display: flex;
     padding: 20px;
     overflow: hidden;
     overflow-y: auto;
-    width: 30vw;
-    height: 20vw;
-    border: 2px solid black;
+    width: 40vw;
+    height: 60vw;
+    border: 2px solid $quaternaryColour;
     border-radius: 15px;
-    background-color: #fbfbf8;
+    background-color: $senaryColour;
   }
+
+  &__cross {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    right: 30px;
+    top: 15px;
+  }
+
   &__tagline {
     margin-bottom: 10px;
   }
 
   &__facts {
     list-style: none;
+    font-family: $secondaryFont;
   }
 
   &__img {
     margin: auto;
+    margin-bottom: 100px;
     max-width: 10vh;
     height: 20vh;
   }
@@ -36,5 +48,18 @@
 
   &__content {
     margin: auto;
+    font-family: $secondaryFont;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .beer-info {
+    &__container {
+      width: 30vw;
+      height: 20vw;
+    }
+    &__img {
+      margin-bottom: 200px;
+    }
   }
 }

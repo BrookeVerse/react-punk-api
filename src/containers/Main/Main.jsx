@@ -5,7 +5,7 @@ import "./Main.scss";
 
 const Main = ({beerArr}) => {
   return <div>
-    <MainArea beerArr={beerArr} />
+    {beerArr && <MainArea beerArr={beerArr} />}
   </div>;
 };
 

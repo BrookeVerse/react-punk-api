@@ -8,20 +8,25 @@ import BeerInfo from "./components/BeerInfo/BeerInfo";
 import "./App.scss";
 
 function App() {
+  //All States being set
   const [searchWord, setSearchWord] = useState("");
   const [filterArr, setFilterArr] = useState([]);
   const [beers, setBeers] = useState([]);
 
+  //API being called for a database
   const getBeers = async () => {
     const res = await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80");
     const data = await res.json();
     setBeers(data);
   };
 
+  //useEffect is stopping the API being called at each re-render
   useEffect(() => {
     getBeers();
   }, []);
 
+  //handleCheckbox is checking each checkbox and when it is being checked it will run a functionn on 
+  //the array of beers, else recalling the API initial data. 
   const handleCheckbox = (button) => {
     if (button.target.checked) {
       if (button.target.value === "ABV") {
@@ -36,6 +41,8 @@ function App() {
     }
   };
 
+  //handleInput is checking what is being typed in the searchbox and if something is typed filtering 
+  //through the beer array to present a new list.
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
     setSearchWord(cleanInput);
@@ -50,11 +57,13 @@ function App() {
     }
   };
 
+//This area is rendering in the componenets and using routing to present different pages.
+//Also sending down props for the componenets to use including ternary operator. 
   return (
     <Router>
       <div className="app">
         <header className="app__header">
-          <h1 className="app__heading">Punk Api</h1>
+          <h1 className="app__heading">Fancy A Brew?</h1>
         </header>
           <div className="app__content">
             <Nav searchWord={searchWord} handleInput={handleInput} handleCheckbox={handleCheckbox} />
@@ -66,6 +75,6 @@ function App() {
       </div>
     </Router>
   );
-}
+} 
 
 export default App;
