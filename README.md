@@ -1,8 +1,7 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=300px height=300px style="border-radius:15%" src="./assets/ReadMeImg/punkApi.JPG" alt="Project logo"></a>
+ <img width=300px height=300px style="border-radius:15%" src="./src/assets/images/ReadMeImg/punkApi.JPG" alt="Project logo"></a>
 </p>
-
 <h3 align="center">Fancy A Brew?</h3>
 
 <div align="center">
@@ -43,7 +42,7 @@ Props have allowed for these functions to be sent down to components so that the
 
 <p align="left">
   <a href="" rel="noopener">
- <img width=500px height=200px style="border-radius:10%" src="./assets/ReadMeImg/punkApi3.JPG" alt="Project logo"></a>
+ <img width=500px height=200px style="border-radius:10%" src="./src/assets/images/ReadMeImg/punkApi3.JPG" alt="Project logo"></a>
 </p>
 ## 🔧 Running the tests <a name = "tests"></a>
 
@@ -68,9 +67,9 @@ With small changes you could present any time of cards, making sure to read the 
 
 ## ✔️ To-Do <a name="to-do"></a>
 
-Functionality I will add to this project: 
+Functionality I will add to this project:
 
-- To be able to use the filters on a search input 
+- To be able to use the filters on a search input
 - To add pagination so that multiple pages of beers are presented
 - More pages such as food recipes to work with beers
 
@@ -90,5 +89,5 @@ The \_nology coaches who trained us in using react, so that we could use that kn
 
 <p align="center">
   <a href="" rel="noopener">
- <img width=500px height=400px style="border-radius:10%" src="./assets/ReadMeImg/punkApi2.JPG" alt="Project logo"></a>
+ <img width=500px height=400px style="border-radius:10%" src="./src/assets/images/ReadMeImg/punkApi2.JPG" alt="Project logo"></a>
 </p>
