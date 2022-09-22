@@ -4,10 +4,6 @@
 </p>
 <h3 align="center">Fancy A Brew?</h3>
 
-<div align="center">
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-
-</div>
 
 ---
 
